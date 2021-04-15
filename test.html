@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tape-la-taupe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div onclick="counting()" class="box" id="box1"></div>
+    <div onclick="countingBonus()" class="box" id="box2"></div>
+    <div onclick="countingMalus()" class="box" id="box3"></div>
+    <div onclick="counting()" class="box" id="box4"></div>
+    <p id="counter"></p>
+    <p id="loser"></p>
+
+    <audio id="sound1" src="sounds/boom.wav"></audio>
+    <audio id="sound2" src="sounds/hihat.wav"></audio>
+    <audio id="sound3" src="sounds/kick.wav"></audio>
+    <audio id="sound4" src="sounds/openhat.wav"></audio>
+    <audio id="sound5" src="sounds/boom.wav"></audio>
+    <audio id="sound6" src="sounds/ride.wav"></audio>
+    <audio id="sound7" src="sounds/snare.wav"></audio>
+    <audio id="sound8" src="sounds/tom.wav"></audio>
+    <h4>Compte à rebours</h4>
+
+    <button type="button" id="start_timer">start countdown</button>
+    <h2 id="count_down_div"></h2>
+
+    <script>
+
+
+
+        const numBox = Array.from(document.querySelectorAll('div'));// selectionne toutes les div et on creer un tableau avec 
+
+        function randTime(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
+        }
+        const time = randTime(500, 1000)
+
+
+        function randomNum() {
+            let num = Math.round(Math.random());//1)choisi un chiffre en 0 et 1 2) arrondi en un chiffre entier (donc soit 0 soit 1)
+            console.log(num);
+            const chosenBox = numBox[Math.round(Math.random() * numBox.length)]; // selectionne une box aleatoirement (on regarde la longeur de la liste et on multiplie par ce nombre le math.random)
+
+            //si num = 0 alors la box choisit par chosenBox apparait
+            if (num == 1) {
+                chosenBox.style.display = "block";
+                setTimeout(function () {
+                    chosenBox.style.display = "none";
+                }, time);
+            }
+
+            else {
+                chosenBox.style.display = "none";
+            }
+
+        }
+
+
+
+        // Déclaration et initialisation d'une variable i comme compteur
+
+        var sound1 = document.getElementById("sound2");
+        var sound2 = document.getElementById("sound3");
+        var sound3 = document.getElementById("sound4");
+        var sound4 = document.getElementById("sound2");
+        var sound5 = document.getElementById("sound3");
+        var sound6 = document.getElementById("sound4");
+
+
+        ////solution2
+        "use strict";
+        // -------------
+
+        // -------------
+        //creation
+        function heures_minutes_secondes(secondes) {
+            let temps = new Date();// objet new date est un standard et se calque sur le navigateur
+            temps.setTime(secondes * 1000);
+            // if( secondes > 60 * 60) // supérieur à 1 heure
+            // {
+            //   return (temps.getHours()-1).toString().padStart(2,'0')+":"+temps.getMinutes().toString().padStart(2,'0')+":"+temps.getSeconds().toString().padStart(2,'0');
+            // } else {
+            return temps.getMinutes().toString().padStart(2, '0') + ":" + temps.getSeconds().toString().padStart(2, '0');
+            //}
+        }
+        // -------------
+
+
+
+        //definition de la fx launch_count_down
+        function startGame() {
+
+            timeUp = false;
+
+            launch_count_down()
+            setTimeout(() => timeUp = true, 15000)
+            setInterval(randomNum, 500);
+            let i = 0;
+            // Fonction qui au clic ajoute 1 au compteur
+            function counting() {
+                i++;
+                document.getElementById("counter").innerHTML = i;
+                var sound = document.getElementById("sound1");
+                sound.play();
+            }
+            function countingBonus() {
+                i += 10;
+                document.getElementById("counter").innerHTML = i;
+                var sound = document.getElementById("sound3");
+                sound.play();
+            }
+
+            function countingMalus() {
+                i -= 10;
+                document.getElementById("counter").innerHTML = i;
+                if (i < 0) {
+                    alert("you a loooooooser");
+                    var sound = document.getElementById("sound6");
+                    sound.play();
+                }
+            }
+
+            document.getElementById('box1').addEventListener('click', function () {
+                counting();
+                this.style.display = 'none'; // on masque le bouton
+            });
+            document.getElementById('box2').addEventListener('click', function () {
+                counting();
+                this.style.display = 'none'; // on masque le bouton
+            });
+            document.getElementById('box3').addEventListener('click', function () {
+                counting();
+                this.style.display = 'none'; // on masque le bouton
+            });
+            document.getElementById('box4').addEventListener('click', function () {
+                counting();
+                this.style.display = 'none'; // on masque le bouton
+            });
+        }
+
+
+        function launch_count_down() {
+            //creation de la variable qui appelle la count_down_div
+            let count_down_div = document.getElementById("count_down_div");
+            // -----------
+            // 1- le délai
+            let total_delay = 15 * 1000; // toutes les 15 SECONDES
+            //let total_delay = 30 * 60 * 1000; // toutes les 30 MINUTES
+            // -----------
+            // 2- Compte à rebours
+            let count_down_delay = 1000 * 1; // affichage toutes les 1 secondes,
+            let count_down = 0;
+            count_down_div.textContent = heures_minutes_secondes((total_delay - count_down) / 1000);
+            // setInterval pour que la fx se reitere 15 fois pour 15 sec
+            let count_Interval = window.setInterval(function () {
+                //iterration de +1 sur le count_down donc transform A REVOIR !!!
+                count_down += count_down_delay;
+                //count_down += 1000;
+                count_down_div.textContent = heures_minutes_secondes((total_delay - count_down) / 1000);
+                if (count_down >= total_delay) { count_down = 0; }
+            }, count_down_delay);
+            // -----------
+            // 3- A LA FIN du compte à rebours
+            setTimeout(function () {
+                // on STOPPE
+                clearInterval(count_Interval);
+                // ICI : ACTION(S) à effectuer à la FIN du compte à rebours
+                // ex : redirection
+                // document.location.href='index.php';
+                // ex : affichage
+                count_down_div.textContent = 'C\'est fini !';
+                // ....
+            }, total_delay);
+            // -----------
+        }
+
+        // Déclenchement au click sur bouton
+        document.getElementById("start_timer").addEventListener('click', function () {
+            startGame();
+            this.style.display = 'none'; // on masque le bouton
+        });
+  // -------------
+  // Déclenchement au chargment de page
+        /*
+        document.addEventListener('DOMContentLoaded', function(event) {
+          launch_count_down();
+        });
+        */
+  // -------------
+
+
+
+
+    </script>
+</body>
+
+</html>

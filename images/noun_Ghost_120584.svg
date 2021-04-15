@@ -1,1 +1,19 @@
-<svg xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><switch><foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"/><g i:extraneous="self"><path d="M88.49,40.4c0-19.54-15.84-35.37-35.37-35.37h-6.24c-19.53,0-35.37,15.83-35.37,35.37l-0.86,46.18v0.28    c0,4.479,3.52,8.109,7.87,8.109c4.34,0,7.87-3.63,7.87-8.109c0-4.49,3.52-8.12,7.87-8.12c4.35,0,7.87,3.63,7.87,8.12    c0,4.479,3.52,8.109,7.87,8.109c4.35,0,7.87-3.63,7.87-8.109c0-4.49,3.52-8.12,7.87-8.12c4.35,0,7.87,3.63,7.87,8.12    c0,4.479,3.52,8.109,7.87,8.109c4.35,0,7.869-3.63,7.869-8.109v-0.28L88.49,40.4z M24.74,55.06c-6.02,0-10.89-6.72-10.89-15.01    s4.87-15.01,10.89-15.01c6.01,0,10.88,6.72,10.88,15.01S30.75,55.06,24.74,55.06z M53.32,55.06c-6.01,0-10.89-6.72-10.89-15.01    s4.88-15.01,10.89-15.01c6.01,0,10.89,6.72,10.89,15.01S59.33,55.06,53.32,55.06z"/><path d="M34.879,40.247c0,3.364-2.32,6.093-5.183,6.093c-2.863,0-5.183-2.729-5.183-6.093c0-3.364,2.32-6.091,5.183-6.091    C32.559,34.156,34.879,36.883,34.879,40.247z"/><path d="M58.304,34.156c-2.862,0-5.183,2.728-5.183,6.091c0,3.364,2.32,6.093,5.183,6.093s5.183-2.729,5.183-6.093    C63.486,36.883,61.166,34.156,58.304,34.156z"/></g></switch><text x="0" y="115" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Andres Flores</text><text x="0" y="120" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 125" style="enable-background:new 0 0 100 125;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EFEF14;}
+</style>
+<g id="Layer_2">
+</g>
+<g id="Layer_1">
+	<path class="st0" d="M88.5,40.4C88.5,20.9,72.6,5,53.1,5h-6.2C27.3,5,11.5,20.9,11.5,40.4l-0.9,46.2v0.3c0,4.5,3.5,8.1,7.9,8.1
+		c4.3,0,7.9-3.6,7.9-8.1c0-4.5,3.5-8.1,7.9-8.1s7.9,3.6,7.9,8.1c0,4.5,3.5,8.1,7.9,8.1s7.9-3.6,7.9-8.1c0-4.5,3.5-8.1,7.9-8.1
+		s7.9,3.6,7.9,8.1c0,4.5,3.5,8.1,7.9,8.1c4.3,0,7.9-3.6,7.9-8.1v-0.3L88.5,40.4z M24.7,55.1c-6,0-10.9-6.7-10.9-15s4.9-15,10.9-15
+		c6,0,10.9,6.7,10.9,15S30.8,55.1,24.7,55.1z M53.3,55.1c-6,0-10.9-6.7-10.9-15s4.9-15,10.9-15s10.9,6.7,10.9,15
+		S59.3,55.1,53.3,55.1z"/>
+	<path class="st0" d="M34.9,40.2c0,3.4-2.3,6.1-5.2,6.1s-5.2-2.7-5.2-6.1s2.3-6.1,5.2-6.1C32.6,34.2,34.9,36.9,34.9,40.2z"/>
+	<path class="st0" d="M58.3,34.2c-2.9,0-5.2,2.7-5.2,6.1c0,3.4,2.3,6.1,5.2,6.1s5.2-2.7,5.2-6.1C63.5,36.9,61.2,34.2,58.3,34.2z"/>
+</g>
+</svg>

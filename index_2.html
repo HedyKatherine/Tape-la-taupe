@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tape la taupe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="rules" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <h1>Welcome to TAPE LA TAUPE</h1>
+            <p class="rules-text">
+                <span class="regle-du-jeu">Règle du Jeu:</span>
+                Frappe les fantomes qui aparaissent de façon aléatoire, pour un temps aléatoire sur l'écran.
+                Accumule le plus de point possible en cliquant sur maximum de fantome et en évitant les babies.
+                Appuie du play pour commencer!
+            </p>
+            <button onClick="startGame()">Play!</button>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="box bonus" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box malus" id="box3"></div>
+        <div class="box" id="box4"></div>
+        <div class="box" id="box5"></div>
+        <div class="box malus" id="box6"></div>
+        <div class="box" id="box7"></div>
+        <div class="box bonus" id="box8"></div>
+    </div>
+
+
+
+    <p class="score"></p>
+    <p id="loser"></p>
+
+
+
+
+    <h2 id="count_down_div"></h2>
+
+    <audio id="sound1" src="sounds/clap.wav"></audio>
+    <audio id="sound2" src="sounds/openhat.wav"></audio>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
