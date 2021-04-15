@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tape-la-taupe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div onclick="counting()" class="box" id="box1"></div>
+    <div onclick="countingBonus()" class="box" id="box2"></div>
+    <div onclick="countingMalus()" class="box" id="box3"></div>
+    <div onclick="counting()" class="box" id="box4"></div>
+    <p id="counter"></p>
+    <p id="loser"></p>
+
+    <audio id="sound1" src="sounds/boom.wav"></audio>
+    <audio id="sound2" src="sounds/hihat.wav"></audio>
+    <audio id="sound3" src="sounds/kick.wav"></audio>
+    <audio id="sound4" src="sounds/openhat.wav"></audio>
+    <audio id="sound5" src="sounds/boom.wav"></audio>
+    <audio id="sound6" src="sounds/ride.wav"></audio>
+    <audio id="sound7" src="sounds/snare.wav"></audio>
+    <audio id="sound8" src="sounds/tom.wav"></audio>
+
+
+    <script>
+
+        //converti les div en un array
+        // const boxList = Array.from(document.querySelectorAll('div'));
+
+
+        // function randomUpdate() {
+        //     let num = Math.round(Math.random()); //random nombre 0 ou 1 
+        //     let randomBoxResult = boxList[Math.floor(Math.random() * boxList.length)]; //random choix d'une des box;
+        //     console.log(num);
+        //     num == 1 ? randomBoxResult.style.display = "block" : randomBoxResult.style.display = "none";//si random num = 1 alors on affiche la div qui a elle aussi ete choisi en random 
+        // }
+
+        //setInterval(randomUpdate, 500); // tire un nombre au sort chaque seconde
+
+        const numBox = Array.from(document.querySelectorAll('div'));// selectionne toutes les div et on creer un tableau avec 
+
+        function randTime(min, max) {
+            return Math.round(Math.random() * (max - min) + min);
+        }
+        const time = randTime(500, 1000)
+
+
+        function randomNum() {
+            let num = Math.round(Math.random());//1)choisi un chiffre en 0 et 1 2) arrondi en un chiffre entier (donc soit 0 soit 1)
+            console.log(num);
+            const chosenBox = numBox[Math.round(Math.random() * numBox.length)]; // selectionne une box aleatoirement (on regarde la longeur de la liste et on multiplie par ce nombre le math.random)
+
+            //si num = 0 alors la box choisit par chosenBox apparait
+            if (num == 1) {
+                chosenBox.style.display = "block";
+                setTimeout(function () {
+                    chosenBox.style.display = "none";
+                }, time);
+            }
+
+            else {
+                chosenBox.style.display = "none";
+            }
+
+        }
+        setInterval(randomNum, 500);
+
+
+        // Déclaration et initialisation d'une variable i comme compteur
+        let i = 0;
+        // Fonction qui au clic ajoute 1 au compteur
+        function counting() {
+            i++;
+            document.getElementById("counter").innerHTML = i;
+            var sound = document.getElementById("sound1");
+            sound.play();
+        }
+        function countingBonus() {
+            i += 10;
+            document.getElementById("counter").innerHTML = i;
+            var sound = document.getElementById("sound3");
+            sound.play();
+        }
+
+        function countingMalus() {
+            i -= 10;
+            document.getElementById("counter").innerHTML = i;
+            if (i < 0) {
+                alert("you a loooooooser");
+                var sound = document.getElementById("sound6");
+                sound.play();
+            }
+        }
+        var sound1 = document.getElementById("sound2");
+        var sound2 = document.getElementById("sound3");
+        var sound3 = document.getElementById("sound4");
+        var sound4 = document.getElementById("sound2");
+        var sound5 = document.getElementById("sound3");
+        var sound6 = document.getElementById("sound4");
+
+
+
+
+    </script>
+</body>
+
+</html>
