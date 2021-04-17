@@ -1,0 +1,115 @@
+@charset "UTF-8";
+* {
+  cursor: none;
+}
+
+body {
+  height: 100vh;
+  background-color: #0e0c24;
+  color: whitesmoke;
+  font-family: "Press Start 2P", cursive;
+}
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 2;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: white;
+  /* Fallback color */
+  transition: background 2s ease-out, padding 0.8s linear;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 20px;
+  width: 40%;
+  /* Could be more or less, depending on screen size */
+  height: 40vh;
+  transition: background 2s ease-out, padding 0.8s linear;
+}
+
+#main_title {
+  font-size: 4em;
+  text-align: center;
+}
+
+.iconBox {
+  border-radius: 50px;
+  height: 80vh;
+}
+.iconBox .box {
+  border: 2px solid black;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  /*pointer-events: none; //non-cliquable*/
+}
+.iconBox .box .icon {
+  position: absolute;
+  z-index: 1;
+  height: 150px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: appear 0.3s linear;
+}
+
+/* animation --> apparition des icones du bas vers le haut */
+@keyframes appear {
+  from {
+    bottom: -150px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+.board {
+  background-color: #071c94;
+  border-radius: 50px;
+  border: solid rgba(251, 255, 0, 0.959) 3px;
+  position: relative;
+  height: 300px;
+}
+.board #score {
+  font-size: 3em;
+}
+
+.cursor img {
+  position: absolute;
+  height: 125px;
+  z-index: 2;
+  transform: translate(-10px, -40px);
+  /* pour que l'image se place au même niveau que le curseur */
+  pointer-events: none;
+  /* pour que l'image puisse agir comme un curseur (appui sur un bouton, etc.) */
+}
+
+/* animation curseur --> mouvement qui frappe */
+@keyframes hit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-30deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
